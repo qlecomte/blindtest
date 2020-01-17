@@ -1,0 +1,13 @@
+.container-fluid {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+td {
+    width: auto;
+}
+
+td.min {
+    width: 1%;
+    white-space: nowrap;
+}

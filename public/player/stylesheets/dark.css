@@ -1,0 +1,23 @@
+body {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.form-control {
+    background-color: #333;
+    border-color: #888;
+    color: whitesmoke;
+}
+
+.form-control:focus {
+    background-color: #444;
+    border-color: whitesmoke;
+    color: whitesmoke;
+}
+
+.form-control:disabled {
+    background-color: #666;
+    border-color: #888;
+    color: whitesmoke;
+}
+

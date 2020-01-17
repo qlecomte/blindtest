@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Quentin Lecomte" />
+    <meta name="copyright" content="Copyright owner" />
+    <title>Blindtest</title>
+    <link rel="stylesheet" href="../common/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <style>
+        html, body {
+            height: calc(100% - 16px);
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid h-100 d-flex flex-column">
+    <form id="username-form" class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" id="username" autocomplete="off"
+                   aria-describedby="message" placeholder="Your username">
+        </div>
+    </form>
+    <span id="score"></span>
+    <div class="flex-grow-1 answers-container justify-content-end">
+        <div id="answers" class=" d-flex flex-column ">
+
+        </div>
+    </div>
+    <div id="currentAnswer">
+
+    </div>
+    <form id="form" class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" id="m" autocomplete="off"
+                   aria-describedby="message" placeholder="Write your answer here">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary" id="submitMessageBtn">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="cheat-container">
+    TRICHEUR
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="javascripts/main.js"></script>
+</body>
+</html>

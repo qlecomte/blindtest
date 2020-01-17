@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Quentin Lecomte" />
+    <meta name="copyright" content="Copyright owner" />
+    <title>Blindtest Admin panel</title>
+    <link rel="stylesheet" href="../common/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-xs-12 align-self-start">
+            <div id="section-youtube">
+                <form class="form-row" onsubmit="updateVideo()">
+                    <div class="col">
+                        <input type="text" class="form-control" id="videoId" aria-describedby="videoId" placeholder="Youtube URL">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0" allow="encrypted-media;" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="section-inputs" style="">
+                <form>
+                    <div id="input-fields"></div>
+                    <button type="button" class="btn btn-primary" onclick="addInputField()">
+                        <i class="fa fa-plus"></i>
+                        More fields
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8 col-xs-12 section-players">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Socket Id</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="clients"></tbody>
+            </table>
+            <button type="button" class="btn btn-primary" onclick="cleanClients()">
+                <i class="fa fa-trash-alt"></i>
+                Clear
+            </button>
+            <button type="button" class="btn btn-primary" onclick="lockClients()">
+                <i class="fa fa-lock"></i>
+                Lock
+            </button>
+            <button type="button" class="btn btn-primary" onclick="unlockClients()">
+                <i class="fa fa-unlock"></i>
+                Unlock
+            </button>
+        </div>
+    </div>
+
+</div>
+<template id="table-row">
+    <tr>
+        <td class="min">
+            <span id="username"></span>
+        </td>
+        <td>
+            <i class="fa fa-lock" id="lock"></i>
+            <span id="msg"></span>
+        </td>
+        <td class="min" id="score"></td>
+        <td class="min">
+            <button id="button-yes" type="button" class="btn btn-success fa fa-check"></button>
+            <button id="button-no"  type="button" class="btn btn-danger  fa fa-times"></button>
+        </td>
+    </tr>
+</template>
+<template id="field-row">
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Input name">
+        </div>
+        <div class="col-auto">
+            <button id="validate-field" type="button" class="h-100 btn btn-info   fa fa-check"></button>
+            <button id="remove-field"   type="button" class="h-100 btn btn-danger fa fa-trash-alt"></button>
+        </div>
+    </div>
+</template>
+<script src="/socket.io/socket.io.js"></script>
+<script src="javascripts/main.js"></script>
+<script src="javascripts/fields.js"></script>
+<script src="javascripts/youtube.js"></script>
+</body>
+</html>

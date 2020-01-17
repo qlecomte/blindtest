@@ -1,0 +1,24 @@
+{
+  "name": "blindtest",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js",
+    "build": "./node_modules/webpack/bin/webpack.js --config webpack.client.config.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "knex": "^0.20.3",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.1",
+    "socket.io": "^2.3.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
