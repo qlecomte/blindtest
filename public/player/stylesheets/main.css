@@ -13,17 +13,27 @@
 
 #username-form {
     max-width: 500px;
+    padding: 16px 16px 0;
 }
 
 #score {
-    padding: 8px 0;
+    padding: 8px 16px;
 }
 
-.answers-container {
+#answers-container {
     overflow: visible scroll;
+    padding: 0 16px;
 }
 
 #answers {
 
+}
+
+#currentAnswer {
+    padding: 0 16px;
+}
+
+#form {
+    padding: 16px;
 }
 

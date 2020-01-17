@@ -75,6 +75,8 @@ function addAnswer (answer, isValid) {
   }
 
   answers.appendChild(answerSpan)
+
+  scrollBottom()
 }
 
 function writeCurrentAnswer (answer) {
@@ -99,6 +101,8 @@ function writeCurrentAnswer (answer) {
   answerSpan.style.color = '#4682B4'
 
   container.appendChild(answerSpan)
+
+  scrollBottom()
 }
 
 function sendUsername () {
@@ -126,4 +130,16 @@ function updateText () {
 
   let message = document.getElementById('m').value
   socket.emit('partial', message)
+}
+
+function scrollBottom(){
+  var element = document.getElementById("answers-container");
+
+  element.scrollTop = element.scrollHeight - element.clientHeight;
+}
+
+function scrollTop(){
+  var element = document.getElementById("answers-container");
+
+  element.scrollTop = element.scrollHeight - element.clientHeight;
 }

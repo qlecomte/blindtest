@@ -3,6 +3,10 @@ body {
     color: whitesmoke;
 }
 
+#form {
+    background-color: #282833;
+}
+
 .form-control {
     background-color: #333;
     border-color: #888;
