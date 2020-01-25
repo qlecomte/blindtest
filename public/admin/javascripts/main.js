@@ -81,6 +81,11 @@ function unlockClients () {
     updateClientViewList()
 }
 
+function rankClients () {
+    clientList.sort((a, b) => b.score - a.score)
+    updateClientViewList()
+}
+
 function validateAnswer (clientId, answer, success) {
     event.preventDefault()
 
