@@ -53,8 +53,9 @@ function invalidAnswer ({answer}) {
     addAnswer(answer, false)
 }
 
-function updateScore ({score}) {
-    document.getElementById('score').innerText = `Score: ${score} pts`
+function updateScore ({score, rank}) {
+    const rankName = rank == 1 ? '1er' : `${rank}ème`
+    document.getElementById('score').innerText = `Score: ${score} pts - Classement: ${rankName}`
 }
 
 function addAnswer (answer, isValid) {

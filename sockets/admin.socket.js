@@ -59,12 +59,13 @@ module.exports = (io) => {
             await answersService.sendAnswer(playerUniqueId, answer, true)
 
             const score = await answersService.getScore(playerUniqueId)
+            const rank = await answersService.getRanks(playerUniqueId)
             adminSocket.emit('score', {clientId: clientId, score: score})
 
             playerSocket.sockets[clientId].emit('validAnswer', {answer})
             playerSocket.sockets[clientId].emit('cleanInput')
 
-            playerSocket.sockets[clientId].emit('score', {score})
+            playerSocket.sockets[clientId].emit('score', {score, rank})
         })
 
         socket.on('invalidAnswer', async ({clientId, answer}) => {

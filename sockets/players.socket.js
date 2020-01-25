@@ -7,7 +7,8 @@ module.exports = (io) => {
 
         const adminSocket = socket.server.nsps['/admin']
         const score = await answersService.getScore(socket.handshake.query.unique_id)
-        socket.emit('score', {score})
+        const rank = await answersService.getRanks(socket.handshake.query.unique_id);
+        socket.emit('score', {score, rank})
 
         adminSocket.emit('addClient', {
             clientId: socket.id,
