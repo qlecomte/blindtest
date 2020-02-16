@@ -7,7 +7,6 @@
     "build": "./node_modules/webpack/bin/webpack.js --config webpack.client.config.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "knex": "^0.20.3",
@@ -17,6 +16,8 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
     "standard": "^14.3.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
